@@ -76,13 +76,13 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(user+"In login srvlet ");
 			if(user !=null)
 			{
-				pw.write("<h3> Successful Login </h3>");
-				pw.write("<h3>"+user.getName()+"</h3>");	
+//				pw.write("<h3> Successful Login </h3>");
+//				pw.write("<h3>"+user.getName()+"</h3>");	
 				//page navigation technique : client pool tech internal navigate to another servlet
 				
 				//get Http session obj from web container
 				HttpSession hs=request.getSession();
-				hs.setAttribute("user_info", user);
+				hs.setAttribute("user_info", user); 
 				
 				System.out.println("session created"+hs.getId());
 				System.out.println("Session created : "+hs.isNew());
@@ -90,11 +90,12 @@ public class LoginServlet extends HttpServlet {
 				
 				
 				
-				
+				//client pool technique : response.sendRedirect("welcome ");
 				response.sendRedirect("welcome");
 			}
 			else
 			{
+				System.out.println("Unsuccesfull attempt");
 				pw.write("<h3>Unsuccesful Attempt</h3>");
 				pw.write("<h3><a href='login.html'>Retry</a></h3>");
 			}

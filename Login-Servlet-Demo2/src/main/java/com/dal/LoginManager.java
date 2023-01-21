@@ -36,7 +36,7 @@ public class LoginManager {
 		}
 		else {
 			System.out.println(user+"In Login manager else block");
-		return user;
+		return null;
 		
 		}
 	}

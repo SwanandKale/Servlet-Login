@@ -40,6 +40,7 @@ public class WelcomeServlet extends HttpServlet {
 		PrintWriter pw=response.getWriter();
 		response.setContentType("text/html");
 		pw.write("<h3>Welcome to servlet</h3>");
+		
 		 Cookie[]cks=request.getCookies();
 		 
 		 String username=null; String email=null;

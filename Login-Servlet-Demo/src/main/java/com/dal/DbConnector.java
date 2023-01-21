@@ -11,6 +11,7 @@ public class DbConnector {
 	{
 		System.out.println("Database connected");
 		con= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo","root","swanand@123");
+		
 		return con;
 	}
 	

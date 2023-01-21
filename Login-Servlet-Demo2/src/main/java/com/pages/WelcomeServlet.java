@@ -1,4 +1,4 @@
-package com.pages;
+  package com.pages;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -44,14 +44,19 @@ public class WelcomeServlet extends HttpServlet {
 		PrintWriter pw=response.getWriter();
 		response.setContentType("text/html");
 		pw.write("<h3>Welcome to servlet</h3>");
-		 Cookie[]cks=request.getCookies();
-		 
-		 String username=null; String email=null;
-		 
+		
 		 HttpSession hs=request.getSession();
 		 User user=(User)hs.getAttribute("user_info");
-		 
+		 if(user!=null)
+		 {
 		 pw.write("<h3>Welcome User :: "+user);
+		 }
+		 else
+		 {
+			 System.out.println("Session tracking failed");
+		 } 
+		 hs.invalidate();
+		 System.out.println("Session logged out");
 		 
 	}
 
