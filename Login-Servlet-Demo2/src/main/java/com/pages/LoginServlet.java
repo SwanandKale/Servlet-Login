@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("In do method method");
+		System.out.println("In do method Login servlet");
 		
 		PrintWriter pw=response.getWriter();
 		response.setContentType("text/html");
@@ -95,7 +95,7 @@ public class LoginServlet extends HttpServlet {
 			}
 			else
 			{
-				System.out.println("Unsuccesfull attempt");
+				System.out.println("Unsuccesfull attempt ");
 				pw.write("<h3>Unsuccesful Attempt</h3>");
 				pw.write("<h3><a href='login.html'>Retry</a></h3>");
 			}
